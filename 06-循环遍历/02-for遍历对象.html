@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in info">{{item}}</li>
+        <!-- 如果只是获取一个值，那么获取到是值value -->
+      </ul>
+
+      <ul>
+        <li v-for="(value, key) in info">{{key}} : {{value}}</li>
+        <!-- 获取键值对，格式（value, key) -->
+      </ul>
+
+      <ul>
+        <li v-for="(value, key, index) in info">
+          {{index}}-{{key}} : {{value}}
+        </li>
+        <!-- 获取键值对和索引号，格式（value, key， index) -->
+      </ul>
+    </div>
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          info: {
+            name: 'pink',
+            age: '18',
+            sex: '男',
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

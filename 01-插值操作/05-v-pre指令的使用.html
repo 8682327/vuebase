@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <!-- 第一个h2元素中的内容会被编译出来对应的内容 -->
+        <h2 v-pre>{{message}}</h2>
+        <!-- 第二个h2元素中会直接显示{{message}} -->
+      </div>
+  
+      <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+      <script>
+        const app = new Vue({
+          el: '#app',
+          data: {
+            message: 'hello world',
+          },
+        });
+      </script>
+</body>
+</html>

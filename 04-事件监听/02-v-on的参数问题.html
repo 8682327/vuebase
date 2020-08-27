@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <button @click="add()">按钮1</button> -->
+      <!-- <button @click="sub">按钮1</button> -->
+      <!-- 在事件监听的时，该methods方法没有参数的话，括号可以加，也可以不加。 -->
+
+      <button @click="add()">按钮2</button>
+      <!-- underfined -->
+
+      <button @click="sub">按钮3</button>
+      <!-- 由于下面的sub(str)有参数，而这里的sub省略了括号，vue会默认将浏览器生产的event事件对象作为参数传入到方法中 -->
+      
+    </div>
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+          add(name) {
+            console.log(name);
+          },
+
+          sub(str) {
+            console.log(str);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model.lazy="message" />
+      <h2>{{message}}</h2>
+      <!-- 修饰符 lazy   按下Enter才显示内容 -->
+
+      <input type="number" v-model.number="age" />
+      <h2>{{age}}-{{typeof age}}</h2>
+      <!-- 表单默认输入内容都是字符串,修饰符number,可以解决这个问题 -->
+
+      <input type="text" v-model.trim="name" />
+      <h2>你输入的内容是:{{name}}</h2>
+      <!-- trim修饰符,只清除首尾的空格 -->
+    </div>
+
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello world',
+          age: 0,
+          name: '',
+        },
+      });
+    </script>
+  </body>
+</html>

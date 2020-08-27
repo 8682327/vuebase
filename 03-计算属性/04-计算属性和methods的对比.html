@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{getFullName()}}</h2>
+      <h2>{{getFullName()}}</h2>
+      <!-- methods方法 -->
+      <h2>{{fullName}}</h2>
+      <h2>{{fullName}}</h2>
+      <!-- 计算属性 -->
+    </div>
+
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello world',
+          firstName: 'hello',
+          lastName: 'world',
+        },
+        methods: {
+          getFullName: function () {
+            console.log('getFullname');
+            // 打印两次
+            return this.firstName + ' ' + this.lastName;
+          },
+        },
+        computed: {
+          fullName: function () {
+            console.log('fullName');
+            // 只打印一次,推荐使用计算属性
+            return this.firstName + ' ' + this.lastName;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

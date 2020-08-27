@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="message" />
+      {{message}}
+      <!-- 通常与表单绑定结合使用，双向绑定 -->
+    </div>
+
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello world',
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2 v-if="score>=90">优秀</h2>
+      <h2 v-else-if="score>=80">良好</h2>
+      <h2 v-else-if="score>=60">及格</h2>
+      <h2 v-else>不及格</h2>
+
+      <h2>{{result}}</h2>
+    </div>
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello world',
+          score: 100,
+        },
+        computed: {
+          result() {
+            let grade = '';
+            if (this.score >= 90) {
+              grade = '优秀';
+            } else if (this.score >= 80) {
+              grade = '良好';
+            } else if (this.score >= 60) {
+              grade = '及格';
+            } else {
+              grade = '不及格';
+            }
+            return grade;
+          },
+          // 推荐使用这种写法
+        },
+      });
+    </script>
+  </body>
+</html>

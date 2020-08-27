@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2 :style="[baseStyles,baseStyles2]">{{message}}</h2>
+      <!-- 第一种写法 -->
+    </div>
+
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello world',
+          baseStyles: { color: 'red' },
+          baseStyles2: { fontSize: '100px' },
+        },
+      });
+    </script>
+  </body>
+</html>

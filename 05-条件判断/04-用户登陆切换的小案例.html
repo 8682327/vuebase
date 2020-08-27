@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <span v-if="isUser">
+        <label for="username">用户账号</label>
+        <input type="text" placeholder="用户账号"  key="username"/>
+      </span>
+      <span v-else>
+        <label for="userEmail">用户邮箱</label>
+        <input type="text" id="userEmail" placeholder="用户邮箱" key="email" />
+        <!-- 如果Vue内部发现原来的input元素不再使用，直接作为else中的input使用。
+        key解决这一问题 -->
+      </span>
+      <button @click="isUser = !isUser">切换类型</button>
+    </div>
+    <script src="../vue.js" type="text/javascript" charset="UTF-8"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          message: 'hello world',
+          isUser: true,
+        },
+      });
+    </script>
+  </body>
+</html>
